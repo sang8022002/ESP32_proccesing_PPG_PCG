@@ -127,7 +127,10 @@ void processing_data(void* parameter)
         if(xSemaphoreTake(semaphorePPG,portMAX_DELAY) == pdTRUE 
             && xSemaphoreTake(semaphorePCG,portMAX_DELAY) == pdTrue)
         {
-            
+            moving_mean(ppg_data, size_process_data, windowsize, mean_data);
+            findpeaks(mean_data, size_process_data, index_peaks_ppg, &number_peaks_ppg, prominence);
+            findpeaks(pcg_data, size_process_data, index_peaks_pcg, &number_peaks_pcg, 0);
+            findTwoLargest(pcg_data, size_process_data, index_peaks_pcg, number_peaks_pcg, number_peaks_ppg, index_peaks_ppg, s1, s2, 150);
             xSemaphoreGive(semaphorePPG);
             xSemaphoreGive(semaphorePCG);
         }
