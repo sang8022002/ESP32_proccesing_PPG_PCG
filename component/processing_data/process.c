@@ -143,3 +143,37 @@ void findTwoLargest(int* arr,int size_arr,int* peak_pcg, int number_peak_pcg, in
         ESP_LOGI(__func__,"Vi tri cua hai gia tri lon nhat gan PPG thu %d lan luot la: %d va %d\n", i, s1[i], s2[i]);
     }
 }
+
+void blood_pressure(float *systolic, float *diastolic, int *inedx_peak_ppg, int number_peak_ppg, int *index_s1, int *index_s2)
+{
+    int a1 = 1;
+    int a2 = 2;
+    int b1 = 1;
+    int b2 = 2;
+    int b3 = 3;
+    int VTT ;
+    int ET;
+    float systolic_;
+    float diastolic_;
+    for(int i = 0; i < number_peak_ppg; i++)
+    {
+        if( abs(inedx_peak_ppg- index_s1) - abs(inedx_peak_ppg- index_s2 > 0) )
+        {
+            VTT = abs(inedx_peak_ppg- index_s1);
+            ET = abs(index_s1 - index_s2);
+            systolic_ = a1 * VTT + a2;
+            diastolic_ = systolic_ - ((b1 * ET) / ( VTT * VTT)) - (b2 / (VTT * VTT)) - b3;
+        }
+        else 
+        {
+            VTT = abs(inedx_peak_ppg- index_s2);
+            ET = abs(index_s1 - index_s2);
+            systolic_ = a1 * VTT + a2;
+            diastolic_ = systolic_ - ((b1 * ET) / ( VTT * VTT)) - (b2 / (VTT * VTT)) - b3;
+        }
+        *systolic = *systolic + systolic_;
+        *diastolic = *diastolic + diastolic_;
+    }
+    *systolic = *systolic / number_peak_ppg;
+    *diastolic = *diastolic / number_peak_ppg;
+}

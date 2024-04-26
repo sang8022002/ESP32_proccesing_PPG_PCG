@@ -34,3 +34,12 @@ void findpeaks(int *arr,int size, int *index, int *number_peak, int prominence )
 /// @param s2 is peak s2
 /// @param window is window with ppg peak is center
 void findTwoLargest(int* arr,int size_arr,int* peak_pcg, int number_peak_pcg, int number_peak_ppg, int* peak_ppg, int* s1, int* s2, int window);
+
+/// @brief To caculate blood pressure from peak ppg and pcg 
+/// @param systolic blood pressure systolic
+/// @param diastolic blood pressure diastolic
+/// @param inedx_peak_ppg is containing array peak ppg
+/// @param number_peak_ppg is number peak ppg in the index_peak_ppg
+/// @param index_s1 is array contain s1 peak
+/// @param index_s2 is array contain s2 peak
+void blood_pressure(float *systolic, float *diastolic, int *inedx_peak_ppg, int number_peak_ppg, int *index_s1, int *index_s2);
