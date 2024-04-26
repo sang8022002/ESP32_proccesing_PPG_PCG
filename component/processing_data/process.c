@@ -61,19 +61,19 @@ void findpeaks(int *arr,int size, int *index, int *number_peak, int prominence )
     int j = 0;
     for(int i = 1; i < size ; ++i )
     {
+        //ESP_LOGI(__func__,"arr[%d] = %d", i, arr[i]);
         if( i > 30-1 && i < size-30-1)
         {
             if(arr[i] > arr[i-1] && arr[i] > arr[i+1])
             {
-                
                 if( ((arr[i] - arr[i-30]) > prominence) && ( (arr[i]-arr[i+30]) > prominence) )
                 {
                     index[j] = i;
                     *number_peak = *number_peak + 1;
-                    printf("Dinh ơ vị tri = %d\n", index[j]);
-                    printf("arr[%d] = %d\n", i, arr[i]);
-                    printf("arr[%d] = %d\n", i-1, arr[i-1]);
-                    printf("arr[%d] = %d\n", i+1, arr[i+1]);
+                    // ESP_LOGI(__func__,"Dinh ơ vị tri = %d\n", index[j]);
+                    // ESP_LOGI(__func__,"arr[%d] = %d\n", i, arr[i]);
+                    // ESP_LOGI(__func__,"arr[%d] = %d\n", i-1, arr[i-1]);
+                    // ESP_LOGI(__func__,"arr[%d] = %d\n", i+1, arr[i+1]);
                     j++;
                 }
             }
@@ -86,7 +86,7 @@ void findpeaks(int *arr,int size, int *index, int *number_peak, int prominence )
                 {
                     index[j] = i;
                     *number_peak = *number_peak + 1;
-                    printf("Dinh ơ vị tri = %d\n", i);
+                    // ESP_LOGI(__func__,"Dinh ơ vị tri = %d\n", i);
                 }
             }
         }
@@ -94,12 +94,12 @@ void findpeaks(int *arr,int size, int *index, int *number_peak, int prominence )
         {
             if(arr[i] > arr[i-1] && arr[i] > arr[i+1])
             {
-                printf("có chạy vao doạn cuối\n");
+                ESP_LOGI(__func__,"có chạy vao doạn cuối\n");
                 if( (arr[i] - arr[i - 30]) > prominence && ( (arr[i]-arr[size- 1]> prominence ) ))
                 {
                     index[j] = i;
                     *number_peak = *number_peak + 1;
-                    printf("Dinh ơ vị tri = %d\n", i);
+                    // ESP_LOGI(__func__,"Dinh ơ vị tri = %d\n", i);
                 }
             }
         }
@@ -108,17 +108,19 @@ void findpeaks(int *arr,int size, int *index, int *number_peak, int prominence )
 void findTwoLargest(int* arr,int size_arr,int* peak_pcg, int number_peak_pcg, int number_peak_ppg, int* peak_ppg, int* s1, int* s2, int window)
 {
     int max1, max2;
-    printf("so phan tu cua mang la : %d\n", size_arr);
+    ESP_LOGI(__func__,"so phan tu cua mang la : %d\n", size_arr);
+    ESP_LOGI(__func__,"Number peak ppg : %d", number_peak_ppg);
+    ESP_LOGI(__func__,"Number peak pcg : %d", number_peak_pcg);
     for(int i = 0; i < number_peak_ppg; ++i)
     {
-        printf("Tai dinh ppg thu %d\n", i+1);
+        ESP_LOGI(__func__,"Tai dinh ppg thu %d\n", i+1);
         max1 = 0;
         max2 = 0;
         for(int j = 0; j < number_peak_pcg; ++j)
         {
             if( (peak_pcg[j] > peak_ppg[i]- window) && (peak_pcg[j] < peak_ppg[i] + window))
             {
-                printf(" kiem tra cua so tai dinh ppg[%d] cua so chay den co pcg[%d] = %d\n", peak_ppg[i], peak_pcg[j], arr[peak_pcg[j]]);
+                ESP_LOGI(__func__," kiem tra cua so tai dinh ppg[%d] cua so chay den co pcg[%d] = %d\n", peak_ppg[i], peak_pcg[j], arr[peak_pcg[j]]);
                 if(arr[peak_pcg[j]] > max1)
                 {
                     max2 = max1;
@@ -138,6 +140,6 @@ void findTwoLargest(int* arr,int size_arr,int* peak_pcg, int number_peak_pcg, in
     // In ra vị trí của hai giá trị lớn nhất và lớn thứ hai
     for(int i = 0; i < number_peak_ppg; ++i )
     {
-        printf("Vi tri cua hai gia tri lon nhat gan PPG thu %d lan luot la: %d va %d\n", i, s1[i], s2[i]);
+        ESP_LOGI(__func__,"Vi tri cua hai gia tri lon nhat gan PPG thu %d lan luot la: %d va %d\n", i, s1[i], s2[i]);
     }
 }

@@ -655,3 +655,10 @@ C:/Espressif/frameworks/sdspi_1/build/esp-idf/MAX30102/CMakeFiles/list_install_c
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/MAX30102/CMakeFiles/install.dir
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/MAX30102/CMakeFiles/install/local.dir
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/MAX30102/CMakeFiles/install/strip.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/__idf_processing_data.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/edit_cache.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/rebuild_cache.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/list_install_components.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/install.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/install/local.dir
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/CMakeFiles/install/strip.dir

@@ -64,3 +64,4 @@ C:/Espressif/frameworks/sdspi_1/build/esp-idf/main/libmain.a
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/FileManager/libFileManager.a
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/i2cdev/libi2cdev.a
 C:/Espressif/frameworks/sdspi_1/build/esp-idf/MAX30102/libMAX30102.a
+C:/Espressif/frameworks/sdspi_1/build/esp-idf/processing_data/libprocessing_data.a

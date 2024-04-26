@@ -64,3 +64,4 @@ $<TARGET_FILE:__idf_main>
 $<TARGET_FILE:__idf_FileManager>
 $<TARGET_FILE:__idf_i2cdev>
 $<TARGET_FILE:__idf_MAX30102>
+$<TARGET_FILE:__idf_processing_data>

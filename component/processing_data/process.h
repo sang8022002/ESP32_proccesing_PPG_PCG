@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "esp_log.h"
 
 /// @brief To make the signal to smoother
 /// @param arr is the signal

@@ -96,13 +96,16 @@ esp_err_t sdcard_writeDataToFile(const char *nameFile, const char *format, ...)
     return ESP_OK;
 }
 
-// long int index_data = 0;
+/// @brief read data fromsd card
+/// @param index_data is the location you have read
+/// @param nameFile is name of file that you wnat to read
+/// @param format is structure data you want to read
+/// @param  
+/// @return 
 esp_err_t sdcard_readDataFromFile(long int *index_data ,const char *nameFile, const char *format, ...)
 {
     char pathFile[64];
     sprintf(pathFile, "%s/%s.txt", mount_point, nameFile);
-
-    // ESP_LOGI(__func__, "Opening file %s...", pathFile);
     FILE *file = fopen(pathFile, "r");
     // ESP_LOGI(__func__," dia chi file %p", file);
     if (file == NULL)
