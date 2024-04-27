@@ -177,3 +177,13 @@ void blood_pressure(float *systolic, float *diastolic, int *inedx_peak_ppg, int 
     *systolic = *systolic / number_peak_ppg;
     *diastolic = *diastolic / number_peak_ppg;
 }
+int heart_rate(int *index_peak_ppg, int number_index, int fs)
+{
+    float heart_rate = 0;
+    for(int i = 0; i < number_index - 1; i++)
+    {
+        heart_rate = heart_rate + index_peak_ppg[i+1] - index_peak_ppg[i];
+    }
+    heart_rate = (float)(heart_rate/number_index);
+    return heart_rate;
+}

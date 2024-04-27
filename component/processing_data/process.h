@@ -43,3 +43,10 @@ void findTwoLargest(int* arr,int size_arr,int* peak_pcg, int number_peak_pcg, in
 /// @param index_s1 is array contain s1 peak
 /// @param index_s2 is array contain s2 peak
 void blood_pressure(float *systolic, float *diastolic, int *inedx_peak_ppg, int number_peak_ppg, int *index_s1, int *index_s2);
+
+/// @brief To caculate heart rate
+/// @param index_peak_ppg is array contain the peak index of ppg signal
+/// @param number_index is size of index_peak_ppg
+/// @param fs is frequency sampling
+/// @return value heart rate
+int heart_rate(int *index_peak_ppg, int number_index, int fs);
